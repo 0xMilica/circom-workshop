@@ -1,1 +1,26 @@
+pragma circom 2.1.6;
 
+include "circomlib/poseidon.circom";
+include "circomlib/comparators.circom";
+
+template GuessNumber (solution) {
+
+    //signal input
+    signal input guess;
+
+    //signal output
+    signal output answer;
+    
+    component isCorrectGuess = IsEqual();
+
+    isCorrectGuess.in[0] <== guess;
+    isCorrectGuess.in[1] <== solution;
+
+    answer <== isCorrectGuess.out;
+}
+
+component main = GuessNumber(4);
+
+/* INPUT = {
+    "guess": "4"
+} */
