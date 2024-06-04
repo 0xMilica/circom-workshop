@@ -1,6 +1,5 @@
 pragma circom 2.1.6;
 
-include "circomlib/poseidon.circom";
 include "circomlib/comparators.circom";
 
 template GuessNumber (solution) {
