@@ -1,0 +1,25 @@
+pragma circom 2.1.6;
+
+template Multiply3 () {
+
+    //input signals
+    signal input in1;
+    signal input in2;
+    signal input in3;
+
+    //output signal
+    signal output out;
+    
+    //helper signal
+    signal helper <== in1 * in2;
+
+    out <== helper * in3;
+}
+
+component main = Multiply3();
+
+/* INPUT = {
+    "in1": "3",
+    "in2": "4",
+    "in3": "5"
+} */
